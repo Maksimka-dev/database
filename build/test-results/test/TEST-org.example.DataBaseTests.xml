@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.DataBaseTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-08-22T13:01:34" hostname="DESKTOP-PQ2APH8" time="2.011">
+  <properties/>
+  <testcase name="Проверка создания таблицы в БД" classname="org.example.DataBaseTests" time="1.113"/>
+  <testcase name="Отправка INSERT запроса" classname="org.example.DataBaseTests" time="0.214"/>
+  <testcase name="testUpdateRequest()" classname="org.example.DataBaseTests" time="0.18"/>
+  <testcase name="Отправка DELETE запроса" classname="org.example.DataBaseTests" time="0.095"/>
+  <testcase name="Проверка удаления таблицы из БД" classname="org.example.DataBaseTests" time="0.166"/>
+  <testcase name="Отправка простого SELECT запроса. Проверка имени актера" classname="org.example.DataBaseTests" time="0.104"/>
+  <testcase name="Отправка SELECT JOIN запроса. Проверка принадлежности адреса стране" classname="org.example.DataBaseTests" time="0.131"/>
+  <system-out><![CDATA[2021-08-22 16:01:34 INFO  Log:25 - ------- Started test: Проверка создания таблицы в БД -------
+2021-08-22 16:01:34 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:35 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:35 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:35 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:35 INFO  Log:25 - Send request to DB: CREATE TABLE cars (ID int(6) NOT NULL,MODEL_NAME VARCHAR(45) NOT NULL,COLOR VARCHAR(45) NOT NULL,PRIMARY KEY (id))
+2021-08-22 16:01:35 INFO  Log:25 - Table was created successfully
+2021-08-22 16:01:35 INFO  Log:25 - Send request to DB: Show tables
+2021-08-22 16:01:35 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:35 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:35 INFO  Log:25 - ------- Finished test: Проверка создания таблицы в БД -------
+2021-08-22 16:01:35 INFO  Log:25 - ------- Started test: Отправка INSERT запроса -------
+2021-08-22 16:01:35 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:35 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:35 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: INSERT INTO cars (ID, MODEL_NAME, COLOR) VALUES (490, 'Renault Logan', 'Gray')
+2021-08-22 16:01:36 INFO  Log:25 - New data was inserted into table successfully
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: SELECT * FROM cars
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ResultSet closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ------- Finished test: Отправка INSERT запроса -------
+2021-08-22 16:01:36 INFO  Log:25 - ------- Started test: testUpdateRequest() -------
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: UPDATE cars SET COLOR = 'RED' WHERE ID='490'
+2021-08-22 16:01:36 INFO  Log:25 - Data in table was updated successfully
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: SELECT COLOR FROM cars WHERE ID = ? 
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ResultSet closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ------- Finished test: testUpdateRequest() -------
+2021-08-22 16:01:36 INFO  Log:25 - ------- Started test: Отправка DELETE запроса -------
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: DELETE FROM cars WHERE ID=490
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Data from table was deleted successfully
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: Show tables
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ResultSet closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ------- Finished test: Отправка DELETE запроса -------
+2021-08-22 16:01:36 INFO  Log:25 - ------- Started test: Проверка удаления таблицы из БД -------
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: DROP TABLE cars
+2021-08-22 16:01:36 INFO  Log:25 - Table was deleted successfully
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: Show tables
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ResultSet closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ------- Finished test: Проверка удаления таблицы из БД -------
+2021-08-22 16:01:36 INFO  Log:25 - ------- Started test: Отправка простого SELECT запроса. Проверка имени актера -------
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: SELECT * FROM actor WHERE actor_id = 10
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ResultSet closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ------- Finished test: Отправка простого SELECT запроса. Проверка имени актера -------
+2021-08-22 16:01:36 INFO  Log:25 - ------- Started test: Отправка SELECT JOIN запроса. Проверка принадлежности адреса стране -------
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Connect to DB jdbc:mysql://localhost:3306/sakila by user root
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB successful!
+2021-08-22 16:01:36 INFO  Log:25 - Send request to DB: SELECT ct.city, adr.address FROM city ct LEFT JOIN address adr ON ct.city_id=adr.city_id WHERE city='Abu Dhabi'
+2021-08-22 16:01:36 INFO  Log:25 - Connection to DB closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - Statement closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ResultSet closed successfully
+2021-08-22 16:01:36 INFO  Log:25 - ------- Finished test: Отправка SELECT JOIN запроса. Проверка принадлежности адреса стране -------
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
